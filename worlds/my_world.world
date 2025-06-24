@@ -23,22 +23,14 @@
       <max_contacts>20</max_contacts>
     </physics>
 
-    <!-- Corridor Walls -->
     <model name='left_wall'>
-      <pose frame=''>0 -2.5 1 0 -0 0</pose>  <!-- Left wall at y = -2.5 meters -->
-      <static>1</static>
+      <pose frame=''>0 -2.5 1 0 -0 0</pose>  <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>20 0.025 2</size>  <!-- Wall length: 20m, Wall thickness: 2.5 cm -->
-            </box>
+              <size>20 0.025 2</size>  </box>
           </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-          </surface>
         </collision>
         <visual name='visual'>
           <geometry>
@@ -51,20 +43,13 @@
     </model>
 
     <model name='right_wall'>
-      <pose frame=''>0 2.5 1 0 -0 0</pose>  <!-- Right wall at y = 2.5 meters -->
-      <static>1</static>
+      <pose frame=''>0 2.5 1 0 -0 0</pose>  <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>20 0.025 2</size>  <!-- Wall length: 20m, Wall thickness: 2.5 cm -->
-            </box>
+              <size>20 0.025 2</size>  </box>
           </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-          </surface>
         </collision>
         <visual name='visual'>
           <geometry>
@@ -76,7 +61,6 @@
       </link>
     </model>
 
-    <!-- Ground plane -->
     <model name='ground_plane'>
       <static>1</static>
       <link name='link'>
@@ -84,7 +68,7 @@
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>20 20</size>  <!-- Grid size 20x20 meters -->
+              <size>100 100</size>
             </plane>
           </geometry>
         </collision>
@@ -92,18 +76,132 @@
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>20 20</size>
+              <size>100 100</size>
             </plane>
           </geometry>
         </visual>
       </link>
     </model>
 
-    <scene>
-      <ambient>0.2 0.2 0.2 1</ambient>
-      <background>0.7 0.7 0.7 1</background>
-      <shadows>1</shadows>
-    </scene>
+    <actor name="human1">
+      <skin>
+        <filename>moonwalk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>-10.0 1.5 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>20.98</time>
+            <pose>20.0 1.5 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <actor name="human2">
+      <skin>
+        <filename>moonwalk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>-11.0 0.5 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>42.86</time>
+            <pose>19.0 0.5 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <actor name="human3">
+      <skin>
+        <filename>moonwalk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>10.0 -1.5 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>20.98</time>
+            <pose>-20.0 -1.5 0 0 0 3.14159</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <actor name="human4">
+      <skin>
+        <filename>moonwalk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>8.0 1.0 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>50</time>
+            <pose>-22.0 1.0 0 0 0 3.14159</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <actor name="human5">
+      <skin>
+        <filename>moonwalk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>9.0 -0.6 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>130.43</time>
+            <pose>-21.0 -0.6 0 0 0 3.14159</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
 
     <light name='sun' type='directional'>
       <pose frame=''>0 0 10 0 0 0</pose>
