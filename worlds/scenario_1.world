@@ -85,7 +85,7 @@
 
     <actor name="human1">
       <skin>
-        <filename>moonwalk.dae</filename>
+        <filename>Slampion.dae</filename>
         <scale>1.0</scale>
       </skin>
       <animation name="walking">
@@ -109,7 +109,7 @@
 
     <actor name="human2">
       <skin>
-        <filename>moonwalk.dae</filename>
+        <filename>Slampion.dae</filename>
         <scale>1.0</scale>
       </skin>
       <animation name="walking">
@@ -133,7 +133,7 @@
 
     <actor name="human3">
       <skin>
-        <filename>moonwalk.dae</filename>
+        <filename>Slampion.dae</filename>
         <scale>1.0</scale>
       </skin>
       <animation name="walking">
@@ -157,7 +157,7 @@
 
     <actor name="human4">
       <skin>
-        <filename>moonwalk.dae</filename>
+        <filename>Slampion.dae</filename>
         <scale>1.0</scale>
       </skin>
       <animation name="walking">
@@ -181,7 +181,7 @@
 
     <actor name="human5">
       <skin>
-        <filename>moonwalk.dae</filename>
+        <filename>Slampion.dae</filename>
         <scale>1.0</scale>
       </skin>
       <animation name="walking">
