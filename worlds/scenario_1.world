@@ -92,7 +92,6 @@
       </link>
     </model>
 
-    <!-- Corrected Human Trajectories to match YAML data -->
     <actor name="human1">
       <skin>
         <filename>model://walking_human/meshes/moonwalk.dae</filename>

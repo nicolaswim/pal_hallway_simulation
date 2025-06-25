@@ -23,13 +23,21 @@
       <max_contacts>20</max_contacts>
     </physics>
 
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>17 0 5 0 0.25 3.14159</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
     <model name='left_wall'>
-      <pose frame=''>0 -2.5 1 0 -0 0</pose>  <static>1</static>
+      <pose frame=''>0 -2.5 1 0 -0 0</pose>      <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>20 0.025 2</size>  </box>
+              <size>20 0.025 2</size>            </box>
           </geometry>
         </collision>
         <visual name='visual'>
@@ -43,12 +51,12 @@
     </model>
 
     <model name='right_wall'>
-      <pose frame=''>0 2.5 1 0 -0 0</pose>  <static>1</static>
+      <pose frame=''>0 2.5 1 0 -0 0</pose>      <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>20 0.025 2</size>  </box>
+              <size>20 0.025 2</size>            </box>
           </geometry>
         </collision>
         <visual name='visual'>
@@ -85,11 +93,11 @@
 
     <actor name="human1">
       <skin>
-        <filename>moonwalk.dae</filename>
+        <filename>model://walking_human/meshes/moonwalk.dae</filename>
         <scale>1.0</scale>
       </skin>
       <animation name="walking">
-        <filename>walk.dae</filename>
+        <filename>model://walking_human/meshes/walk.dae</filename>
         <scale>1.000000</scale>
         <interpolate_x>true</interpolate_x>
       </animation>
@@ -97,111 +105,75 @@
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
-            <pose>-10.0 1.5 0 0 0 0</pose>
+            <pose>-8.0 0.2 0 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>20.98</time>
-            <pose>20.0 1.5 0 0 0 0</pose>
-          </waypoint>
+            <time>40</time> <pose>16.0 0.2 0 0 0 0</pose> </waypoint>
         </trajectory>
       </script>
     </actor>
 
     <actor name="human2">
       <skin>
-        <filename>moonwalk.dae</filename>
+        <filename>model://walking_human/meshes/moonwalk.dae</filename>
         <scale>1.0</scale>
       </skin>
       <animation name="walking">
-        <filename>walk.dae</filename>
+        <filename>model://walking_human/meshes/walk.dae</filename>
         <scale>1.000000</scale>
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
-        <trajectory id="0" type="walking">
+        <trajectory id="1" type="walking">
           <waypoint>
             <time>0</time>
-            <pose>-11.0 0.5 0 0 0 0</pose>
+            <pose>17.0 -0.2 0 0 0 3.14159</pose>
           </waypoint>
           <waypoint>
-            <time>42.86</time>
-            <pose>19.0 0.5 0 0 0 0</pose>
+            <time>15</time>
+             <pose>-10.45 -0.2 0 0 0 3.14159</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <actor name="human3">
-      <skin>
-        <filename>moonwalk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walking">
-        <filename>walk.dae</filename>
-        <scale>1.000000</scale>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-      <script>
-        <trajectory id="0" type="walking">
-          <waypoint>
-            <time>0</time>
-            <pose>10.0 -1.5 0 0 0 3.14159</pose>
-          </waypoint>
-          <waypoint>
-            <time>20.98</time>
-            <pose>-20.0 -1.5 0 0 0 3.14159</pose>
-          </waypoint>
-        </trajectory>
-      </script>
-    </actor>
-
-    <actor name="human4">
-      <skin>
-        <filename>moonwalk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walking">
-        <filename>walk.dae</filename>
-        <scale>1.000000</scale>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-      <script>
-        <trajectory id="0" type="walking">
-          <waypoint>
-            <time>0</time>
-            <pose>8.0 1.0 0 0 0 3.14159</pose>
-          </waypoint>
-          <waypoint>
-            <time>50</time>
-            <pose>-22.0 1.0 0 0 0 3.14159</pose>
-          </waypoint>
-        </trajectory>
-      </script>
-    </actor>
-
-    <actor name="human5">
-      <skin>
-        <filename>moonwalk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walking">
-        <filename>walk.dae</filename>
-        <scale>1.000000</scale>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-      <script>
-        <trajectory id="0" type="walking">
-          <waypoint>
-            <time>0</time>
-            <pose>9.0 -0.6 0 0 0 3.14159</pose>
-          </waypoint>
-          <waypoint>
-            <time>130.43</time>
-            <pose>-21.0 -0.6 0 0 0 3.14159</pose>
-          </waypoint>
-        </trajectory>
-      </script>
-    </actor>
+    <model name='slampion_static_model'>
+      <pose>1 1 0 0 0 0</pose>
+      <static>true</static>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0 1.57079 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Slampion/Slampion.dae</uri>
+            </mesh>
+          </geometry>
+          
+          <material>
+            <script>
+              <uri>model://Slampion/textures/</uri>
+              <name>7319b16a17fda36440b2da1cfb01d220</name> 
+            </script>
+            
+            <ambient>1.0 1.0 1.0 1</ambient>
+            <diffuse>1.0 1.0 1.0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            
+            <emissive>0.4 0.4 0.4 1</emissive>
+            
+          </material>
+        </visual>
+        
+        <collision name='collision'>
+          <pose>0 0 0 1.57079 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Slampion/Slampion.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
 
     <light name='sun' type='directional'>
       <pose frame=''>0 0 10 0 0 0</pose>
