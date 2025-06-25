@@ -92,123 +92,117 @@
       </link>
     </model>
 
-    <!-- Corrected Human Trajectories to match YAML data -->
-    <actor name="human1">
+
+    <model name='slampion_static_model'>
+      <pose>1 1 0 0 0 0</pose>
+      <static>true</static>
+      <link name='link'>
+        <visual name='visual'>
+          <pose>0 0 0 1.57079 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://Slampion/Slampion.dae</uri>
+            </mesh>
+          </geometry>
+          
+          <material>
+            <script>
+              <uri>model://Slampion/textures/</uri>
+              <name>7319b16a17fda36440b2da1cfb01d220</name> 
+            </script>
+            
+            <ambient>1.0 1.0 1.0 1</ambient>
+            <diffuse>1.0 1.0 1.0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            
+            <emissive>0.4 0.4 0.4 1</emissive>
+            
+          </material>
+        </visual>
+        
+        <collision name='collision'>
+          <pose>0 0 0 1.57079 0 0</pose>
+          <geometry>
+            <mesh>>
+              <uri>model://Slampion/Slampion.dae</uri
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <actor name="doctor_female">
       <skin>
-        <filename>model://walking_human/meshes/moonwalk.dae</filename>
+        <filename>model://DoctorFemaleWalk/meshes/DoctorFemaleWalk.dae</filename>
         <scale>1.0</scale>
       </skin>
-      <animation name="walking">
-        <filename>model://walking_human/meshes/walk.dae</filename>
-        <scale>1.000000</scale>
+      <animation name="walk">
+        <filename>model://DoctorFemaleWalk/meshes/DoctorFemaleWalk.dae</filename>
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <loop>true</loop>
+        <auto_start>true</auto_start>
         <trajectory id="0" type="walking">
-          <waypoint>
-            <time>0</time>
-            <pose>-10.0 1.5 0 0 0 0</pose>
-          </waypoint>
-          <waypoint>
-            <time>20.98</time>
-            <pose>20.0 1.5 0 0 0 0</pose>
-          </waypoint>
+          <waypoint><time>0</time><pose>-10 2 0 0 0 0</pose></waypoint>
+          <waypoint><time>20</time><pose>10 2 0 0 0 0</pose></waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <actor name="human2">
+    <actor name="female_visitor">
       <skin>
-        <filename>model://walking_human/meshes/moonwalk.dae</filename>
+        <filename>model://FemaleVisitorWalk/meshes/FemaleVisitorWalk.dae</filename>
         <scale>1.0</scale>
       </skin>
-      <animation name="walking">
-        <filename>model://walking_human/meshes/walk.dae</filename>
-        <scale>1.000000</scale>
+      <animation name="walk">
+        <filename>model://FemaleVisitorWalk/meshes/FemaleVisitorWalk.dae</filename>
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <loop>true</loop>
+        <auto_start>true</auto_start>
         <trajectory id="0" type="walking">
-          <waypoint>
-            <time>0</time>
-            <pose>-11.0 0.5 0 0 0 0</pose>
-          </waypoint>
-          <waypoint>
-            <time>42.86</time>
-            <pose>19.0 0.5 0 0 0 0</pose>
-          </waypoint>
+          <waypoint><time>0</time><pose>-10 1 0 0 0 0</pose></waypoint>
+          <waypoint><time>20</time><pose>10 1 0 0 0 0</pose></waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <actor name="human3">
+    <actor name="nurse_female">
       <skin>
-        <filename>model://walking_human/meshes/moonwalk.dae</filename>
+        <filename>model://NurseFemaleWalk/meshes/NurseFemaleWalk.dae</filename>
         <scale>1.0</scale>
       </skin>
-      <animation name="walking">
-        <filename>model://walking_human/meshes/walk.dae</filename>
-        <scale>1.000000</scale>
+      <animation name="walk">
+        <filename>model://NurseFemaleWalk/meshes/NurseFemaleWalk.dae</filename>
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <loop>true</loop>
+        <auto_start>true</auto_start>
         <trajectory id="0" type="walking">
-          <waypoint>
-            <time>0</time>
-            <pose>10.0 -1.5 0 0 0 3.14159</pose>
-          </waypoint>
-          <waypoint>
-            <time>20.98</time>
-            <pose>-20.0 -1.5 0 0 0 3.14159</pose>
-          </waypoint>
+          <waypoint><time>0</time><pose>-10 0 0 0 0 0</pose></waypoint>
+          <waypoint><time>20</time><pose>10 0 0 0 0 0</pose></waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <actor name="human4">
+    <actor name="wheelchair_patient">
       <skin>
-        <filename>model://walking_human/meshes/moonwalk.dae</filename>
+        <filename>model://PatientWheelChair/meshes/PatientWheelChair.obj</filename>
         <scale>1.0</scale>
       </skin>
-      <animation name="walking">
-        <filename>model://walking_human/meshes/walk.dae</filename>
-        <scale>1.000000</scale>
+      <animation name="roll">
+        <filename>model://PatientWheelChair/meshes/PatientWheelChair.obj</filename>
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <loop>true</loop>
+        <auto_start>true</auto_start>
         <trajectory id="0" type="walking">
-          <waypoint>
-            <time>0</time>
-            <pose>8.0 1.0 0 0 0 3.14159</pose>
-          </waypoint>
-          <waypoint>
-            <time>50</time>
-            <pose>-22.0 1.0 0 0 0 3.14159</pose>
-          </waypoint>
-        </trajectory>
-      </script>
-    </actor>
-
-    <actor name="human5">
-      <skin>
-        <filename>model://walking_human/meshes/moonwalk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walking">
-        <filename>model://walking_human/meshes/walk.dae</filename>
-        <scale>1.000000</scale>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-      <script>
-        <trajectory id="0" type="walking">
-          <waypoint>
-            <time>0</time>
-            <pose>9.0 -0.6 0 0 0 3.14159</pose>
-          </waypoint>
-          <waypoint>
-            <time>130.43</time>
-            <pose>-21.0 -0.6 0 0 0 3.14159</pose>
-          </waypoint>
+          <waypoint><time>0</time><pose>-10 -1 0 0 0 0</pose></waypoint>
+          <waypoint><time>20</time><pose>10 -1 0 0 0 0</pose></waypoint>
         </trajectory>
       </script>
     </actor>

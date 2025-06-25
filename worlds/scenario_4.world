@@ -137,44 +137,6 @@
       </script>
     </actor>
 
-    <model name='slampion_static_model'>
-      <pose>1 1 0 0 0 0</pose>
-      <static>true</static>
-      <link name='link'>
-        <visual name='visual'>
-          <pose>0 0 0 1.57079 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://Slampion/Slampion.dae</uri>
-            </mesh>
-          </geometry>
-          
-          <material>
-            <script>
-              <uri>model://Slampion/textures/</uri>
-              <name>7319b16a17fda36440b2da1cfb01d220</name> 
-            </script>
-            
-            <ambient>1.0 1.0 1.0 1</ambient>
-            <diffuse>1.0 1.0 1.0 1</diffuse>
-            <specular>0.1 0.1 0.1 1</specular>
-            
-            <emissive>0.4 0.4 0.4 1</emissive>
-            
-          </material>
-        </visual>
-        
-        <collision name='collision'>
-          <pose>0 0 0 1.57079 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://Slampion/Slampion.dae</uri>
-            </mesh>
-          </geometry>
-        </collision>
-      </link>
-    </model>
-
     <light name='sun' type='directional'>
       <pose frame=''>0 0 10 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
