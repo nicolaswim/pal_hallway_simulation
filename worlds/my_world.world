@@ -92,120 +92,29 @@
       </link>
     </model>
 
-
-    <model name='slampion_static_model'>
-      <pose>1 1 0 0 0 0</pose>
+    <model name='wheelchair_patient_static_simple'>
+      <pose>5 -1 0 0 0 0</pose>
       <static>true</static>
       <link name='link'>
         <visual name='visual'>
-          <pose>0 0 0 1.57079 0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://Slampion/Slampion.dae</uri>
+              <uri>model://PatientWheelChair/meshes/PatientWheelChair.obj</uri>
             </mesh>
           </geometry>
-          
-          <material>
-            <script>
-              <uri>model://Slampion/textures/</uri>
-              <name>7319b16a17fda36440b2da1cfb01d220</name> 
-            </script>
-            
-            <ambient>1.0 1.0 1.0 1</ambient>
-            <diffuse>1.0 1.0 1.0 1</diffuse>
-            <specular>0.1 0.1 0.1 1</specular>
-            
-            <emissive>0.4 0.4 0.4 1</emissive>
-            
-          </material>
         </visual>
         
         <collision name='collision'>
-          <pose>0 0 0 1.57079 0 0</pose>
+          <pose>0 0 0 0 0 0</pose>
           <geometry>
-            <mesh>>
-              <uri>model://Slampion/Slampion.dae</uri
-            </mesh>
+            <box>
+              <size>1.0 0.8 1.2</size>
+            </box>
           </geometry>
         </collision>
       </link>
     </model>
-
-    <actor name="doctor_female">
-      <skin>
-        <filename>model://DoctorFemaleWalk/meshes/DoctorFemaleWalk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walk">
-        <filename>model://DoctorFemaleWalk/meshes/DoctorFemaleWalk.dae</filename>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-      <script>
-        <loop>true</loop>
-        <auto_start>true</auto_start>
-        <trajectory id="0" type="walking">
-          <waypoint><time>0</time><pose>-10 2 0 0 0 0</pose></waypoint>
-          <waypoint><time>20</time><pose>10 2 0 0 0 0</pose></waypoint>
-        </trajectory>
-      </script>
-    </actor>
-
-    <actor name="female_visitor">
-      <skin>
-        <filename>model://FemaleVisitorWalk/meshes/FemaleVisitorWalk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walk">
-        <filename>model://FemaleVisitorWalk/meshes/FemaleVisitorWalk.dae</filename>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-      <script>
-        <loop>true</loop>
-        <auto_start>true</auto_start>
-        <trajectory id="0" type="walking">
-          <waypoint><time>0</time><pose>-10 1 0 0 0 0</pose></waypoint>
-          <waypoint><time>20</time><pose>10 1 0 0 0 0</pose></waypoint>
-        </trajectory>
-      </script>
-    </actor>
-
-    <actor name="nurse_female">
-      <skin>
-        <filename>model://NurseFemaleWalk/meshes/NurseFemaleWalk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walk">
-        <filename>model://NurseFemaleWalk/meshes/NurseFemaleWalk.dae</filename>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-      <script>
-        <loop>true</loop>
-        <auto_start>true</auto_start>
-        <trajectory id="0" type="walking">
-          <waypoint><time>0</time><pose>-10 0 0 0 0 0</pose></waypoint>
-          <waypoint><time>20</time><pose>10 0 0 0 0 0</pose></waypoint>
-        </trajectory>
-      </script>
-    </actor>
-
-    <actor name="wheelchair_patient">
-      <skin>
-        <filename>model://PatientWheelChair/meshes/PatientWheelChair.obj</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="roll">
-        <filename>model://PatientWheelChair/meshes/PatientWheelChair.obj</filename>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-      <script>
-        <loop>true</loop>
-        <auto_start>true</auto_start>
-        <trajectory id="0" type="walking">
-          <waypoint><time>0</time><pose>-10 -1 0 0 0 0</pose></waypoint>
-          <waypoint><time>20</time><pose>10 -1 0 0 0 0</pose></waypoint>
-        </trajectory>
-      </script>
-    </actor>
 
     <light name='sun' type='directional'>
       <pose frame=''>0 0 10 0 0 0</pose>
