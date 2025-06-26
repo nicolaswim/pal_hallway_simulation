@@ -25,7 +25,7 @@
 
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>17 0 5 0 0.25 3.14159</pose>  <!-- Position at x=10, looking towards negative x-axis (180-degree turn) -->
+        <pose frame=''>17 0 5 0 0.25 3.14159</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -33,12 +33,14 @@
 
 
     <model name='left_wall'>
-      <pose frame=''>0 -2.5 1 0 -0 0</pose>      <static>1</static>
+      <pose frame=''>0 -2.5 1 0 -0 0</pose>
+      <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>20 0.025 2</size>            </box>
+              <size>20 0.025 2</size>
+            </box>
           </geometry>
         </collision>
         <visual name='visual'>
@@ -52,12 +54,14 @@
     </model>
 
     <model name='right_wall'>
-      <pose frame=''>0 2.5 1 0 -0 0</pose>      <static>1</static>
+      <pose frame=''>0 2.5 1 0 -0 0</pose>
+      <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>20 0.025 2</size>            </box>
+              <size>20 0.025 2</size>
+            </box>
           </geometry>
         </collision>
         <visual name='visual'>
@@ -92,29 +96,99 @@
       </link>
     </model>
 
-    <model name='wheelchair_patient_static_simple'>
-      <pose>5 -1 0 0 0 0</pose>
+   <model name='patient_wheelchair'>
+      <pose>5.4 0 0 0 0 0</pose>
       <static>true</static>
       <link name='link'>
         <visual name='visual'>
-          <pose>0 0 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://PatientWheelChair/meshes/PatientWheelChair.obj</uri>
+              <uri>model://wheelchair_skeleton/Wheelchair.dae</uri>
             </mesh>
           </geometry>
         </visual>
-        
         <collision name='collision'>
-          <pose>0 0 0 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>1.0 0.8 1.2</size>
-            </box>
-          </geometry>
+           <geometry>
+             <mesh>
+               <uri>model://wheelchair_skeleton/Wheelchair.dae</uri>
+             </mesh>
+           </geometry>
         </collision>
       </link>
     </model>
+
+    <actor name="moving_wheelchair">
+      <pose>5 -1 0 0 0 0</pose> 
+
+      <skin>
+        <filename>model://wheelchair_skeleton/Wheelchair.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      
+      <animation name="driving">
+        <filename>model://wheelchair_skeleton/Wheelchair.dae</filename>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+
+      <script>
+        <loop>true</loop>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="driving">
+          <waypoint>
+            <time>0</time>
+            <pose>5 -1 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>10</time>
+            <pose>-5 -1 0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>20</time>
+            <pose>5 -1 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <actor name="new_gliding_actor">
+      <pose>-8 1 0 0 0 0</pose>
+
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>model://wheelchair_skeleton/meshes/Wheelchair.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+
+      <script>
+        <loop>true</loop>
+        <delay_start>0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="1" type="gliding">
+          <waypoint>
+            <time>0</time>
+            <pose>-8 1 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>16</time>
+            <pose>8 1 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>18</time>
+            <pose>8 1 0 0 0 3.14</pose> </waypoint>
+          <waypoint>
+            <time>34</time>
+            <pose>-8 1 0 0 0 3.14</pose>
+          </waypoint>
+          <waypoint>
+            <time>36</time>
+            <pose>-8 1 0 0 0 0</pose> </waypoint>
+        </trajectory>
+      </script>
+    </actor>
 
     <light name='sun' type='directional'>
       <pose frame=''>0 0 10 0 0 0</pose>
