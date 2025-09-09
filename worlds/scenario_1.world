@@ -25,12 +25,11 @@
 
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>17 0 5 0 0.25 3.14159</pose>  <!-- Position at x=10, looking towards negative x-axis (180-degree turn) -->
+        <pose frame=''>17 0 5 0 0.25 3.14159</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-
 
     <model name='left_wall'>
       <pose frame=''>0 -2.5 1 0 -0 0</pose>      <static>1</static>
@@ -188,18 +187,21 @@
       </script>
     </actor>
 
-    <actor name="human5">
-      <skin>
-        <filename>model://walking_human/meshes/moonwalk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walking">
-        <filename>model://walking_human/meshes/walk.dae</filename>
-        <scale>1.000000</scale>
-        <interpolate_x>true</interpolate_x>
-      </animation>
+    <actor name="wheelchair1">
+      <pose>9.0 -0.6 0 0 0 3.14159</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>model://wheelchair_skeleton/meshes/Wheelchair.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
       <script>
-        <trajectory id="0" type="walking">
+        <loop>false</loop>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="gliding">
           <waypoint>
             <time>0</time>
             <pose>9.0 -0.6 0 0 0 3.14159</pose>

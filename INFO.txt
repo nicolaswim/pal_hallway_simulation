@@ -1,0 +1,6 @@
+USEFUYL COMMANDS 
+
+Launching my world with launch file 1 from thios repo:
+
+ros2 launch pal_gazebo_worlds scenario_1.launch.py world_name:=my_world
+

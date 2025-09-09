@@ -92,6 +92,7 @@
     </model>
 
     <actor name="human1">
+       <pose>1.0 1.0 0 0 0 0</pose>
       <skin>
         <filename>model://walking_human/meshes/moonwalk.dae</filename>
         <scale>1.0</scale>
@@ -105,17 +106,18 @@
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
-            <pose>1.0 1.5 0 0 0 0</pose>
+            <pose>1.0 1.0 0 0 0 0</pose>
           </waypoint>
           <waypoint>
             <time>20</time>
-            <pose>1.0 1.5 0 0 0 0</pose>
+            <pose>1.0 1.0 0 0 0 0</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
     <actor name="human2">
+      <pose>2.0 1.0 0 0 0 0</pose>
       <skin>
         <filename>model://walking_human/meshes/moonwalk.dae</filename>
         <scale>1.0</scale>
@@ -129,58 +131,90 @@
         <trajectory id="1" type="walking">
           <waypoint>
             <time>0</time>
-            <pose>1.5 1.2 0 0 0 0</pose>
+            <pose>2.0 1.0 0 0 0 0</pose>
           </waypoint>
           <waypoint>
             <time>20</time>
-            <pose>1.5 1.2 0 0 0 0</pose>
+            <pose>2.0 1.0 0 0 0 0</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <actor name="human3">
-      <skin>
-        <filename>model://walking_human/meshes/moonwalk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walking">
-        <filename>model://walking_human/meshes/walk.dae</filename>
-        <scale>1.000000</scale>
-        <interpolate_x>true</interpolate_x>
-      </animation>
+    <actor name="wheelchair1">
+      <pose>2.0 -2.0 0 0 0 1.2217</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>model://wheelchair_skeleton/meshes/Wheelchair.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
       <script>
-        <trajectory id="2" type="walking">
+        <loop>true</loop>
+        <auto_start>true</auto_start>
+        <trajectory id="2" type="gliding">
           <waypoint>
             <time>0</time>
-            <pose>2.0 -2.5 0 0 0 0</pose> </waypoint>
+            <pose>2.0 -2.0 0 0 0 1.2217</pose>
+          </waypoint>
           <waypoint>
-            <time>11.63</time> <pose>2.0 2.3 0 0 0 0</pose> </waypoint>
+            <time>11.63</time>
+            <pose>2.0 2.0 0 0 0 1.2217</pose>
+          </waypoint>
           <waypoint>
-            <time>23.26</time> <pose>2.0 -2.3 0 0 0 0</pose> </waypoint>
+            <time>13.63</time>
+            <pose>2.0 2.0 0 0 0 -1.2217</pose>
+          </waypoint>
+          <waypoint>
+            <time>25.26</time>
+            <pose>2.0 -2.0 0 0 0 -1.2217</pose>
+          </waypoint>
+          <waypoint>
+            <time>27.26</time>
+            <pose>2.0 -2.0 0 0 0 1.2217</pose>
+          </waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <actor name="human4">
-      <skin>
-        <filename>model://walking_human/meshes/moonwalk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walking">
-        <filename>model://walking_human/meshes/walk.dae</filename>
-        <scale>1.000000</scale>
-        <interpolate_x>true</interpolate_x>
-      </animation>
+    <actor name="wheelchair2">
+      <pose>4.0 2.0 0 0 0 -1.2217</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>model://wheelchair_skeleton/meshes/Wheelchair.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
       <script>
-        <trajectory id="3" type="walking">
+        <loop>true</loop>
+        <auto_start>true</auto_start>
+        <trajectory id="3" type="gliding">
           <waypoint>
             <time>0</time>
-            <pose>4.0 2.5 0 0 0 0</pose> </waypoint>
+            <pose>4.0 2.0 0 0 0 -1.2217</pose>
+          </waypoint>
           <waypoint>
-            <time>11.63</time> <pose>4.0 -2.3 0 0 0 0</pose> </waypoint>
+            <time>11.63</time>
+            <pose>4.0 -2.0 0 0 0 -1.2217</pose>
+          </waypoint>
           <waypoint>
-            <time>23.26</time> <pose>4.0 2.3 0 0 0 0</pose> </waypoint>
+            <time>13.63</time>
+            <pose>4.0 -2.0 0 0 0 1.2217</pose>
+          </waypoint>
+          <waypoint>
+            <time>25.26</time>
+            <pose>4.0 2.0 0 0 0 1.2217</pose>
+          </waypoint>
+          <waypoint>
+            <time>27.26</time>
+            <pose>4.0 2.0 0 0 0 -1.2217</pose>
+          </waypoint>
         </trajectory>
       </script>
     </actor>
