@@ -113,7 +113,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
-        <delay_start>5</delay_start>
+        <delay_start>20</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -138,7 +138,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
-        <delay_start>5</delay_start>
+        <delay_start>20</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -163,7 +163,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
-        <delay_start>5</delay_start>
+        <delay_start>20</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -188,7 +188,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
-        <delay_start>5</delay_start>
+        <delay_start>20</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
