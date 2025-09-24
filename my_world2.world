@@ -102,6 +102,78 @@
       </link>
     </model>
 
+    <actor name="human1">
+      <skin>
+        <filename>model://walking_human/meshes/moonwalk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://walking_human/meshes/walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>-10.0 1.5 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>20.98</time>
+            <pose>20.0 1.5 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <actor name="human2">
+      <skin>
+        <filename>model://walking_human/meshes/moonwalk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://walking_human/meshes/walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>-11.0 0.5 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>42.86</time>
+            <pose>19.0 0.5 0 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+    <actor name="human3">
+      <skin>
+        <filename>model://walking_human/meshes/moonwalk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>model://walking_human/meshes/walk.dae</filename>
+        <scale>1.000000</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <script>
+        <trajectory id="0" type="walking">
+          <waypoint>
+            <time>0</time>
+            <pose>10.0 -1.5 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>20.98</time>
+            <pose>-20.0 -1.5 0 0 0 3.14159</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
     <actor name="human4">
       <skin>
         <filename>model://walking_human/meshes/moonwalk.dae</filename>
@@ -113,7 +185,6 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
-        <delay_start>5</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -126,7 +197,33 @@
         </trajectory>
       </script>
     </actor>
-    
+
+    <actor name="wheelchair1">
+      <pose>9.0 -0.6 0 0 0 3.14159</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>model://wheelchair_skeleton/meshes/Wheelchair.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <script>
+        <loop>false</loop>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="gliding">
+          <waypoint>
+            <time>0</time>
+            <pose>9.0 -0.6 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>130.43</time>
+            <pose>-21.0 -0.6 0 0 0 3.14159</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
 
     <light name='sun' type='directional'>
       <pose frame=''>0 0 10 0 0 0</pose>

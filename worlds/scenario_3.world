@@ -131,11 +131,11 @@
         <trajectory id="1" type="walking">
           <waypoint>
             <time>0</time>
-            <pose>2.0 1.0 0 0 0 0</pose>
+            <pose>0.8 1.4 0 0 0 0</pose>
           </waypoint>
           <waypoint>
             <time>20</time>
-            <pose>2.0 1.0 0 0 0 0</pose>
+            <pose>0.8 1.4 0 0 0 0</pose>
           </waypoint>
         </trajectory>
       </script>

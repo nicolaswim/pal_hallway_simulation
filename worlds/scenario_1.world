@@ -2,6 +2,13 @@
   <world name='default'>
     <plugin name="pal_gazebo_collisions" filename="libpal_gazebo_collisions.so"/>
     <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so"/>
+
+    <plugin name="gazebo_ros_factory" filename="libgazebo_ros_factory.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+    </plugin>
+
     <physics name='default_physics' default='0' type='ode'>
       <ode>
         <solver>
@@ -32,12 +39,14 @@
     </gui>
 
     <model name='left_wall'>
-      <pose frame=''>0 -2.5 1 0 -0 0</pose>      <static>1</static>
+      <pose frame=''>0 -2.5 1 0 -0 0</pose>
+      <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>20 0.025 2</size>            </box>
+              <size>20 0.025 2</size>
+            </box>
           </geometry>
         </collision>
         <visual name='visual'>
@@ -51,12 +60,14 @@
     </model>
 
     <model name='right_wall'>
-      <pose frame=''>0 2.5 1 0 -0 0</pose>      <static>1</static>
+      <pose frame=''>0 2.5 1 0 -0 0</pose>
+      <static>1</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <box>
-              <size>20 0.025 2</size>            </box>
+              <size>20 0.025 2</size>
+            </box>
           </geometry>
         </collision>
         <visual name='visual'>
@@ -102,6 +113,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <delay_start>5</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -126,6 +138,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <delay_start>5</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -150,6 +163,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <delay_start>5</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -174,6 +188,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <delay_start>5</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -188,7 +203,7 @@
     </actor>
 
     <actor name="wheelchair1">
-      <pose>9.0 -0.6 0 0 0 3.14159</pose>
+      <pose>15.0 -0.6 0 0 0 3.14159</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
@@ -201,10 +216,10 @@
       <script>
         <loop>false</loop>
         <auto_start>true</auto_start>
-        <trajectory id="0" type="gliding">
+          <trajectory id="0" type="gliding">
           <waypoint>
             <time>0</time>
-            <pose>9.0 -0.6 0 0 0 3.14159</pose>
+            <pose>15.0 -0.6 0 0 0 3.14159</pose>
           </waypoint>
           <waypoint>
             <time>130.43</time>

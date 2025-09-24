@@ -1,6 +1,18 @@
-USEFUYL COMMANDS 
+USEFUL COMMANDS 
 
 Launching my world with launch file 1 from thios repo:
 
 ros2 launch pal_gazebo_worlds scenario_1.launch.py world_name:=my_world
 
+Launch with PAL 
+
+With arm
+ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=True is_public_sim:=True world_name:=my_world
+
+No arm
+ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=True is_public_sim:=True world_name:=my_world arm_type:=no-arm
+
+With NAV2!
+ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=True is_public_sim:=True world_name:=scenario_2 slam:=True
+
+ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=True is_public_sim:=True world_name:=my_world 
