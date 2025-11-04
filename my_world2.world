@@ -113,6 +113,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <delay_start>20</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -137,6 +138,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <delay_start>20</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -161,6 +163,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <delay_start>20</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -185,6 +188,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <delay_start>20</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
@@ -199,7 +203,7 @@
     </actor>
 
     <actor name="wheelchair1">
-      <pose>9.0 -0.6 0 0 0 3.14159</pose>
+      <pose>15.0 -0.6 0 0 0 3.14159</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
@@ -212,10 +216,10 @@
       <script>
         <loop>false</loop>
         <auto_start>true</auto_start>
-        <trajectory id="0" type="gliding">
+          <trajectory id="0" type="gliding">
           <waypoint>
             <time>0</time>
-            <pose>9.0 -0.6 0 0 0 3.14159</pose>
+            <pose>15.0 -0.6 0 0 0 3.14159</pose>
           </waypoint>
           <waypoint>
             <time>130.43</time>

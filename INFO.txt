@@ -15,4 +15,4 @@ ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=True is_public_sim:=
 With NAV2!
 ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=True is_public_sim:=True world_name:=scenario_2 slam:=True
 
-ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=True is_public_sim:=True world_name:=my_world 
+ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=True is_public_sim:=True world_name:=scenario_2

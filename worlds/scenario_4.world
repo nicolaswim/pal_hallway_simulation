@@ -102,13 +102,41 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <loop>true</loop>
+        <delay_start>20</delay_start>
         <trajectory id="0" type="walking">
           <waypoint>
             <time>0</time>
             <pose>-8.0 0.2 0 0 0 0</pose>
           </waypoint>
           <waypoint>
-            <time>40</time> <pose>16.0 0.2 0 0 0 0</pose> </waypoint>
+            <time>40</time>
+            <pose>16.0 0.2 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>41</time>
+            <pose>16.0 0.2 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>81</time>
+            <pose>-8.0 0.2 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>82</time>
+            <pose>-8.0 0.2 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>122</time>
+            <pose>16.0 0.2 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>123</time>
+            <pose>16.0 0.2 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>163</time>
+            <pose>-8.0 0.2 0 0 0 3.14159</pose>
+          </waypoint>
         </trajectory>
       </script>
     </actor>
@@ -124,6 +152,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+        <delay_start>20</delay_start>
         <trajectory id="1" type="walking">
           <waypoint>
             <time>0</time>
@@ -132,6 +161,30 @@
           <waypoint>
             <time>15</time>
              <pose>-10.45 -0.2 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>16</time>
+            <pose>-10.45 -0.2 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>31</time>
+            <pose>17.0 -0.2 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>32</time>
+            <pose>17.0 -0.2 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>47</time>
+            <pose>-10.45 -0.2 0 0 0 3.14159</pose>
+          </waypoint>
+          <waypoint>
+            <time>48</time>
+            <pose>-10.45 -0.2 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>63</time>
+            <pose>17.0 -0.2 0 0 0 0</pose>
           </waypoint>
         </trajectory>
       </script>

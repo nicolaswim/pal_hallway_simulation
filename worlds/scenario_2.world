@@ -93,7 +93,7 @@
       </link>
     </model>
 
-    <actor name="dynamic_walker_1">
+    <actor name="human1">
       <pose>-10.0 0.0 0 0 0 -0.0873</pose>
       <skin>
         <filename>model://walking_human/meshes/moonwalk.dae</filename>
@@ -106,6 +106,7 @@
       </animation>
       <script>
         <loop>true</loop>
+        <delay_start>20</delay_start>
         <auto_start>true</auto_start>
         <trajectory id="0" type="walking">
           <waypoint>
@@ -132,8 +133,8 @@
       </script>
     </actor>
 
-    <actor name="dynamic_wheelchair">
-      <pose>14.0 1.5 0 0 0 -2.999</pose>
+    <actor name="wheelchair1">
+      <pose>24.0 1.5 0 0 0 -2.999</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
@@ -149,29 +150,29 @@
         <trajectory id="1" type="gliding">
           <waypoint>
             <time>0</time>
-            <pose>14.0 1.5 0 0 0 -2.999</pose>
+            <pose>24.0 1.5 0 0 0 -2.999</pose>
           </waypoint>
           <waypoint>
-            <time>40.0</time>
+            <time>65.0</time>
             <pose>-14.0 -2.5 0 0 0 -2.999</pose>
           </waypoint>
           <waypoint>
-            <time>42.0</time>
+            <time>72.0</time>
             <pose>-14.0 -2.5 0 0 0 0.142</pose>
           </waypoint>
           <waypoint>
-            <time>82.0</time>
+            <time>112.0</time>
             <pose>14.0 1.5 0 0 0 0.142</pose>
           </waypoint>
           <waypoint>
-            <time>84.0</time>
-            <pose>14.0 1.5 0 0 0 -2.999</pose>
+            <time>114.0</time>
+            <pose>24.0 1.5 0 0 0 -2.999</pose>
           </waypoint>
         </trajectory>
       </script>
     </actor>
 
-    <actor name="dynamic_walker_2">
+    <actor name="human2">
       <pose>-11.0 -2.0 0 0 0 -0.0873</pose>
       <skin>
         <filename>model://walking_human/meshes/moonwalk.dae</filename>
@@ -183,6 +184,7 @@
         <interpolate_x>true</interpolate_x>
       </animation>
       <script>
+      <delay_start>20</delay_start>
         <loop>true</loop>
         <auto_start>true</auto_start>
         <trajectory id="2" type="walking">
