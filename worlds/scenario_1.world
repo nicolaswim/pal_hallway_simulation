@@ -32,7 +32,7 @@
 
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>17 0 5 0 0.25 3.14159</pose>
+        <pose frame=''>18.5 0 5 0 0.25 3.14159</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -398,7 +398,7 @@
             <pose>13.0 -0.6 0 0 0 0</pose>
           </waypoint>
         </trajectory>
-    </script>
+      </script>
     </actor>
 
     <light name='sun' type='directional'>
@@ -407,6 +407,25 @@
       <specular>0.2 0.2 0.2 1</specular>
       <direction>0.5 0.1 -0.9</direction>
     </light>
+
+    <model name='goal_marker'>
+      <pose>9 0 0.05 0 0 0</pose>
+      <static>true</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><sphere><radius>0.1</radius></sphere></geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0 0 0 0</specular>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry><sphere><radius>0.1</radius></sphere></geometry>
+          <surface><contact><collide_bitmask>0</collide_bitmask></contact></surface>
+        </collision>
+      </link>
+    </model>
 
     <gravity>0 0 -9.81</gravity>
   </world>
